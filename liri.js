@@ -13,7 +13,7 @@ var axios = require("axios");
 var command = process.argv[2];
 //console.log(command);
 
-var value = process.argv[3];
+var value = process.argv.slice(3).join(" ");
 //console.log(value);
 
 switch(command){
@@ -73,7 +73,12 @@ function concert(){
 };
 
 function song(){
-    console.log("You are in the Spotify command!");
+    //console.log("You are in the Spotify command!");
+    var queryUrl = " " + value + " ";
+    axios.get(queryUrl)
+    .then(function(response){
+        console.log(response.data);
+    });
 };
 
 
