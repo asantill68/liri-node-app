@@ -72,13 +72,20 @@ function concert(){
     });
 };
 
-function song(){
-    //console.log("You are in the Spotify command!");
-    var queryUrl = " " + value + " ";
-    axios.get(queryUrl)
-    .then(function(response){
-        console.log(response.data);
-    });
-};
+// function song(songName){
+//     //If user has not specified a song, default to "The Sign" by Ace of Base
+//     if (songName === "") {
+//         songName = "The Sign";
+//     }
+
+//     spotify.search({ type: 'track', query: songName }, function(err, data) {
+//         if (err) {
+//           return console.log('Error occurred: ' + err);
+//         }
+       
+//       console.log(data); 
+//       });
+
+// };
 
 
