@@ -58,12 +58,13 @@ function concert(){
     axios.get(queryUrl)
     .then(function(response){
         //var concertR = response.data[0];
+        //console.log(response.data[0].datetime);
         console.log("---------------------------------------------------------------");
-        console.log("       Artist: "+value);
+        console.log("       Artist:  "+value);
         console.log("Name of Venue:  "+response.data[0].venue.name);
         console.log(" Name of City:  "+response.data[0].venue.city +", " + response.data[0].venue.region);
         // var eventDate = moment(response.data[0].datetime).format('MM/DD/YYYY');
-         console.log("Date of Event: ");    //+eventDate);
+         console.log("Date of Event:  "+response.data[0].datetime);    //+eventDate);
         console.log("---------------------------------------------------------------");
         // for (var i = 0; i<response.data[i]; i++){
         //     console.log(response.data[i].venue.name);
