@@ -3,12 +3,12 @@ require("dotenv").config();
 var keys = require("./keys.js");
 var axios = require("axios");
 //var moment = require("moment");
-//var Spotify = require("node-sotify-api");
-// var fs = require("fs");
-// var spotify = new Spotify({
-//     id:  keys.spotify.id,
-//     secret:  keys.spotify.secret,
-// });
+var Spotify = require("node-sotify-api");
+var fs = require("fs");
+var spotify = new Spotify({
+     id:  keys.spotify.id,
+     secret:  keys.spotify.secret,
+ });
 
 var command = process.argv[2];
 //console.log(command);
@@ -73,20 +73,20 @@ function concert(){
     });
 };
 
-// function song(songName){
-//     //If user has not specified a song, default to "The Sign" by Ace of Base
-//     if (songName === "") {
-//         songName = "The Sign";
-//     }
+function song(songName){
+    //If user has not specified a song, default to "The Sign" by Ace of Base
+    if (songName === "") {
+        songName = "The Sign";
+    }
 
-//     spotify.search({ type: 'track', query: songName }, function(err, data) {
-//         if (err) {
-//           return console.log('Error occurred: ' + err);
-//         }
+    spotify.search({ type: 'track', query: songName }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
        
-//       console.log(data); 
-//       });
+      console.log(data);
+      });
 
-// };
+};
 
 
